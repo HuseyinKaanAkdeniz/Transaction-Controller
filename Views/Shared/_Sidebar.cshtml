@@ -1,0 +1,75 @@
+﻿@{
+	List<Object> menuItems = new List<object>();
+
+	menuItems.Add(new
+	{
+		text = "Gösterge Paneli ",
+		iconCss = "fa-solid fa-box",
+		url = "/",
+
+	});
+
+	menuItems.Add(new
+	{
+		text = "Kategoriler",
+		url = "/Category",
+		iconCss="fa-solid fa-folder-closed",
+		
+	});
+	menuItems.Add(new
+	{
+		text = "Gelirler/Giderler",
+		iconCss = "fa-solid fa-arrow-right-arrow-left",
+		url = "/Transaction",
+		
+	});
+
+	menuItems.Add(new
+	{
+		text = "Hata Bildir",
+		iconCss = "fa-solid fa-chart-simple",
+		url = "#",
+
+	});
+
+	menuItems.Add(new
+	{
+		text = "Ayarlar	",
+		iconCss = "fa-solid fa-gear",
+		url = "/Transaction",
+
+	});
+}
+
+<ejs-sidebar id="sidebar" width="260px" enableDock dockSize="100px"
+target=".dock-target" enableGestures="false"> 
+	<e-content-template>
+
+		<div class="logo-wrapper">
+			<div class="app-logo"> 
+				<img src="~/favicon-32x32.png"/>
+			</div>
+			<div class="w-100"></div>
+			<i id="sidebar-toggler"class="fa-solid "></i>
+		</div>
+
+          <div class="profile-wrapper">
+			<img class="profile-pic" src="~/Untitled.jpg" />
+			<div class="titles d-flex flex-columns ps-3">
+				<h6>Kaan Akdeniz</h6>
+			</div>
+		  </div>
+		<ejs-menu id="menu" items="menuItems"
+		 hamburgerMode orientation="Vertical">
+
+		</ejs-menu>
+	</e-content-template>
+</ejs-sidebar>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		dockBar = document.getElementById('sidebar').ej2_instances[0];
+		document.getElementById('sidebar-toggler').onclick = function () { 
+				dockBar.toggle();
+	};
+	}); 
+</script>

@@ -1,0 +1,12 @@
+# Visual Studio ile ilgili dosyalar
+.vs/
+*.user
+*.suo
+
+# Build klasörleri
+bin/
+obj/
+
+# Diğer geçici dosyalar
+*.log
+*.tmp
